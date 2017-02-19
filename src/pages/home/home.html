@@ -1,1 +1,39 @@
+<ion-header center text-center>
+  <ion-navbar>
+    <ion-title>The To-Do List!</ion-title>
+  </ion-navbar>
+</ion-header>
 
+<ion-content center text-center>
+  <button ion-button round block (click)="addItem()">
+    <ion-icon name="add"></ion-icon>
+    Add New Item
+  </button>
+  <ion-list inset *ngFor="let listItem of listItems | async; let i = index;">
+    <ion-item-sliding (click)="switchComplete(listItem.$key, listItem.done)">
+      <!-- If item is completed, visually show completion -->
+      <ion-item text-wrap *ngIf="listItem.done === true">
+        <ion-label>
+          <s> {{i+1}}. {{listItem.item}} </s>
+        </ion-label>
+        <ion-checkbox color="positive" checked="true" disabled="true"></ion-checkbox>
+      </ion-item>
+      <!-- If item is completed, visually show incompletion -->
+      <ion-item text-wrap *ngIf="listItem.done === false">
+        <ion-label>
+          {{i+1}}. {{listItem.item}}
+        </ion-label>
+        <ion-checkbox color="positive" checked="false" (click)="switchComplete(listItem.$key, listItem.done)"></ion-checkbox>
+      </ion-item>
+      <!-- Options for item slide -->
+      <ion-item-options>
+        <button ion-button color="primary" (click)="updateItem(listItem.$key, listItem.item)">
+          <ion-icon name="build"></ion-icon>
+          Edit</button>
+        <button ion-button color="danger" (click)="removeItem(listItem.$key)">
+          <ion-icon name="trash"></ion-icon>
+          Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
