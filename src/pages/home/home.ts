@@ -18,7 +18,7 @@ export class HomePage {
   addItem(){    
     let prompt = this.alertCtrl.create({
     title: 'To-Do List Item',
-    message: "Add a new item to your To-Do List.",
+    message: "Add a new item to the list!",
     inputs: [
       {
         name: 'item',
@@ -53,7 +53,7 @@ export class HomePage {
   updateItem(itemId, itemDescription){
     let prompt = this.alertCtrl.create({
       title: 'Item Description',
-      message: "Update the description for this To-Do List item.",
+      message: "Update the item in the List",
       inputs: [
         {
           name: 'item',
