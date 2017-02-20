@@ -1,7 +1,8 @@
 /*
-
-
-
+Ryan Jameson
+Assignment 2
+COMP3025-W2017
+Typescript File
 */
 import { Component } from '@angular/core';
 import { NavController, AlertController, ActionSheetController } from 'ionic-angular';
