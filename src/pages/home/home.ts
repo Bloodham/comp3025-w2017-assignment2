@@ -20,7 +20,7 @@ export class HomePage {
     this.listItems = af.database.list('/todoList');
   }
 
-  //Add Item and Save
+  //methods
   addItem(){    
     let prompt = this.alertCtrl.create({
     title: 'To-Do List Item',
@@ -51,11 +51,11 @@ export class HomePage {
   });
   prompt.present();
   }
-//Remove item at ID
+
   removeItem(itemId: string){
     this.listItems.remove(itemId);
   }
-//Updates the Item at ID
+
   updateItem(itemId, itemDescription){
     let prompt = this.alertCtrl.create({
       title: 'Item Description',
@@ -86,7 +86,7 @@ export class HomePage {
     });
     prompt.present();
   }
-//Allows the user to switch item completion from true/false
+
   switchComplete(itemId, itemCompletion){
     if(itemCompletion == true){
       this.listItems.update(itemId, {
