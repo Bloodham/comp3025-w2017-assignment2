@@ -9,7 +9,6 @@ HTML File
     <ion-title>To-Do List!</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content center text-center>
   <button ion-button round block (click)="addItem()">
     <ion-icon name="add"></ion-icon>
@@ -20,7 +19,7 @@ HTML File
       <!-- If item is completed, visually show completion -->
       <ion-item text-wrap *ngIf="listItem.done === true">
         <ion-label>
-          <s> {{i+1}}. {{listItem.item}} </s>
+          <s> {{i+1}}. {{listItem.item}}</s>
         </ion-label>
         <ion-checkbox color="positive" checked="true" disabled="true"></ion-checkbox>
       </ion-item>
